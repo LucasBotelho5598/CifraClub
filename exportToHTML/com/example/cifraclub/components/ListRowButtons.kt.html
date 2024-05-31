@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>ListRowButtons.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ListRowButtons.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">cifraclub</span><span class="s2">.</span><span class="s1">components</span>
+
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">BorderStroke</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">Arrangement</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">lazy</span><span class="s2">.</span><span class="s1">LazyRow</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">foundation</span><span class="s2">.</span><span class="s1">lazy</span><span class="s2">.</span><span class="s1">items</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Button</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">ButtonDefaults</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">material3</span><span class="s2">.</span><span class="s1">Text</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">runtime</span><span class="s2">.</span><span class="s1">Composable</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">graphics</span><span class="s2">.</span><span class="s1">Color</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">tooling</span><span class="s2">.</span><span class="s1">preview</span><span class="s2">.</span><span class="s1">Preview</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">compose</span><span class="s2">.</span><span class="s1">ui</span><span class="s2">.</span><span class="s1">unit</span><span class="s2">.</span><span class="s1">dp</span>
+
+<span class="s1">private </span><span class="s0">val </span><span class="s1">nameButton </span><span class="s2">= </span><span class="s1">listOf</span><span class="s2">(</span>
+    <span class="s3">&quot;Principal&quot;</span><span class="s2">,</span>
+    <span class="s3">&quot;Simplificada&quot;</span>
+<span class="s2">)</span>
+
+<span class="s1">@Preview</span>
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">ListRowButtons</span><span class="s2">() {</span>
+    <span class="s1">LazyRow </span><span class="s2">(</span>
+        <span class="s1">horizontalArrangement </span><span class="s2">= </span><span class="s1">Arrangement</span><span class="s2">.</span><span class="s1">spacedBy</span><span class="s2">(</span><span class="s4">8</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">),</span>
+    <span class="s2">){</span>
+        <span class="s1">items</span><span class="s2">(</span><span class="s1">nameButton</span><span class="s2">) { </span><span class="s1">item </span><span class="s2">-&gt;</span>
+            <span class="s1">ButtonTwo</span><span class="s2">(</span><span class="s1">textButton </span><span class="s2">= </span><span class="s1">item</span><span class="s2">)</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s1">@Composable</span>
+<span class="s0">fun </span><span class="s1">ButtonTwo</span><span class="s2">(</span>
+    <span class="s1">textButton: String</span><span class="s2">,</span>
+    <span class="s1">onClick: </span><span class="s2">() -&gt; </span><span class="s1">Unit </span><span class="s2">= {}</span>
+<span class="s2">) {</span>
+    <span class="s1">Button</span><span class="s2">(</span>
+        <span class="s1">onClick </span><span class="s2">= </span><span class="s1">onClick</span><span class="s2">,</span>
+        <span class="s1">colors </span><span class="s2">= </span><span class="s1">ButtonDefaults</span><span class="s2">.</span><span class="s1">buttonColors</span><span class="s2">(</span><span class="s1">containerColor </span><span class="s2">= </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">White</span><span class="s2">),</span>
+        <span class="s1">border </span><span class="s2">= </span><span class="s1">BorderStroke</span><span class="s2">(</span><span class="s4">1</span><span class="s2">.</span><span class="s1">dp</span><span class="s2">, </span><span class="s1">Color</span><span class="s2">.</span><span class="s1">Gray</span><span class="s2">),</span>
+    <span class="s2">) {</span>
+        <span class="s1">Text</span><span class="s2">(</span><span class="s1">text </span><span class="s2">= </span><span class="s1">textButton</span><span class="s2">)</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+</pre>
+</body>
+</html>
