@@ -19,7 +19,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -46,19 +48,12 @@ import com.example.cifraclub.components.ListRowCard
 
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
 @Composable
-fun HomeScreenPrincipal() {
-
-    val topCipherSpace: Dp = 500.dp
-    val bottomCipherSpace: Dp = 820.dp
-    val bottomCipherGrid:Dp = 550.dp
-
+fun AppBarCifraClub() {
     TopAppBar(
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Unspecified,
-
-            ),
+            containerColor = Color.Unspecified
+        ),
         title = {
             Row(
                 horizontalArrangement = Arrangement.Center,
@@ -67,22 +62,22 @@ fun HomeScreenPrincipal() {
                     painter = painterResource(id = R.drawable.logocifra),
                     contentDescription = null,
                     modifier = Modifier
-                        .size(150.dp)
+                        .size(160.dp)
                         .offset(-50.dp)
                         .padding(start = 8.dp)
                 )
             }
         },
         actions = {
-            Row (
+            Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalAlignment = Alignment.CenterVertically
 
-            ){
+            ) {
                 Box(
                     modifier = Modifier
                         .align(Alignment.Top)
-                        .width(80.dp)
+                        .width(70.dp)
                         .height(30.dp)
                         .clip(RoundedCornerShape(8.dp))
                         .background(Color(0xFF1DB400))
@@ -93,16 +88,13 @@ fun HomeScreenPrincipal() {
                         text = "Seja PRO",
                         color = Color.White,
                         textAlign = TextAlign.Center,
-                        fontWeight = FontWeight.SemiBold,
+                        fontWeight = FontWeight.Black,
                         fontSize = 12.sp,
                         modifier = Modifier
                             .align(Alignment.Center)
-                            .offset(y = (-2).dp)
+                            .offset(y = (-1).dp)
                     )
-
                 }
-
-
             }
             Image(
                 painter = painterResource(id = R.drawable.profilemusic),
@@ -115,14 +107,38 @@ fun HomeScreenPrincipal() {
         }
 
     )
-    LazyChips()
+}
+
+
+@Preview
+@Composable
+fun BodyAdd() {
+    Column(
+        modifier = Modifier.verticalScroll(rememberScrollState()).padding(5.dp)
+    ) {
+        AppBarCifraClub()
+        LazyChips()
+        ListRowCard()
+    }
+
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun HomeScreenPrincipal() {
+
+    val topCipherSpace: Dp = 500.dp
+    val bottomCipherSpace: Dp = 820.dp
+    val bottomCipherGrid: Dp = 550.dp
+
+
 
     Row(
         modifier = Modifier
             .absolutePadding(top = 100.dp)
 
     ) {
-        ListRowCard()
+
     }
     Row(
         horizontalArrangement = Arrangement.Center,
@@ -138,8 +154,6 @@ fun HomeScreenPrincipal() {
                 .absolutePadding(top = topCipherSpace)
 
         )
-
-
 
 
     }
@@ -175,7 +189,6 @@ fun HomeScreenPrincipal() {
             )
 
         }
-
 
 
     }

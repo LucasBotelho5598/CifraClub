@@ -2,6 +2,8 @@ package com.example.cifraclub.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.absolutePadding
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -21,13 +23,14 @@ import com.example.cifraclub.model.ListImage
 import com.example.cifraclub.model.imageList
 
 
-@Preview
+
 @Composable
 fun ListRowCard() {
-    LazyRow (
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
-        modifier = Modifier.padding(top=30.dp, start = 12.dp)
-    ){
+
+    LazyRow(
+        horizontalArrangement = Arrangement.spacedBy(15.dp),
+        modifier = Modifier.absolutePadding(top = 10.dp, left = 10.dp)
+    ) {
         items(imageList) { item ->
             CardList(listImage = item)
         }
@@ -36,21 +39,21 @@ fun ListRowCard() {
 
 @Composable
 fun CardList(
-   listImage: ListImage
+    listImage: ListImage,
 ) {
 
     Card(
-        shape = RoundedCornerShape(0.dp),
-        modifier  = Modifier.height(350.dp),
+        shape = RoundedCornerShape(10.dp),
+        modifier = Modifier.height(350.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
         ),
 
-    ) {
+        ) {
         Image(
             painter = painterResource(id = listImage.image!!),
             contentDescription = null,
-            contentScale = ContentScale.Fit,
+            contentScale = ContentScale.Crop,
         )
 
     }
