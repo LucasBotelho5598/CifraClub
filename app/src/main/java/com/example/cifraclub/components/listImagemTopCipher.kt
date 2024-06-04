@@ -16,6 +16,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,6 +31,8 @@ import com.example.cifraclub.model.ListImage
 import com.example.cifraclub.model.imageList
 
 
+
+
 @Preview
 @Composable
 fun ListImagemTopCipher() {
@@ -38,21 +41,21 @@ fun ListImagemTopCipher() {
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         contentPadding = PaddingValues(horizontal = 16.dp),
-        modifier = Modifier.height(280.dp).padding(12.dp)
-        ) {
+        modifier = Modifier.height(280.dp)
+    ) {
         items(imageList) { item ->
             ImagemList(listImage = item)
         }
     }
 
 }
-private val listNumber = listOf("1", "2")
 
+private val listNumber = listOf("1", "2")
 @Composable
 fun ImagemList(
     listImage: ListImage,
 
-) {
+    ) {
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -62,10 +65,16 @@ fun ImagemList(
             painter = painterResource(id = listImage.image!!),
             contentDescription = null,
             contentScale = ContentScale.Fit,
-            modifier = Modifier.clip(CircleShape).size(60.dp)
+            modifier = Modifier
+                .clip(CircleShape)
+                .size(40.dp)
 
         )
-        Text(listNumber.get(0), color = Color.Black, modifier = Modifier.padding(horizontal = 16.dp))
+        Text(
+            text = listNumber[0],
+            color = Color.Black,
+            modifier = Modifier.padding(horizontal = 16.dp)
+        )
         Column {
             Text("Consagração", color = Color.Black)
             Text("Aline Barros", color = Color.Black)

@@ -114,63 +114,23 @@ fun AppBarCifraClub() {
 @Composable
 fun BodyAdd() {
     Column(
-        modifier = Modifier.verticalScroll(rememberScrollState()).padding(5.dp)
+        modifier = Modifier
+            .verticalScroll(rememberScrollState())
+            .padding(5.dp)
     ) {
         AppBarCifraClub()
         LazyChips()
         ListRowCard()
-    }
-
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun HomeScreenPrincipal() {
-
-    val topCipherSpace: Dp = 500.dp
-    val bottomCipherSpace: Dp = 820.dp
-    val bottomCipherGrid: Dp = 550.dp
-
-
-
-    Row(
-        modifier = Modifier
-            .absolutePadding(top = 100.dp)
-
-    ) {
-
-    }
-    Row(
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-
         Text(
             "Top Cifras",
             color = Color.Black,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier
                 .padding(12.dp)
-                .absolutePadding(top = topCipherSpace)
 
         )
 
-
-    }
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .absolutePadding(top = bottomCipherGrid),
-    ) {
         ListImagemTopCipher()
-    }
-
-
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .absolutePadding(top = bottomCipherSpace),
-    ) {
         Button(
             onClick = {},
             colors = ButtonDefaults.buttonColors(containerColor = Color.White),
@@ -190,8 +150,8 @@ fun HomeScreenPrincipal() {
 
         }
 
-
     }
 
 }
+
 
