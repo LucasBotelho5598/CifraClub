@@ -31,8 +31,6 @@ import com.example.cifraclub.model.ListImage
 import com.example.cifraclub.model.imageList
 
 
-
-
 @Preview
 @Composable
 fun ListImagemTopCipher() {
@@ -51,6 +49,7 @@ fun ListImagemTopCipher() {
 }
 
 private val listNumber = listOf("1", "2")
+
 @Composable
 fun ImagemList(
     listImage: ListImage,

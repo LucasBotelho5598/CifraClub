@@ -33,6 +33,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.example.cifraclub.components.mediaPlayer
 import com.example.cifraclub.model.Music
+import com.example.cifraclub.videoplayer.VideoPLayer
 
 
 @Composable
@@ -51,13 +52,16 @@ fun HomeScreen(
     }
 }
 
+@Composable
+fun TopAppBarCipher(){
+
+}
+
 
 @Composable
 fun CipherMusic(
     music: Music,
 ) {
-
-    mediaPlayer()
 
     Row(
         modifier = Modifier
@@ -91,6 +95,7 @@ fun CipherMusic(
 
     ) {
         Column {
+            VideoPLayer()
             Text(
                 text = music.title,
                 color = Color.Black,
@@ -134,11 +139,6 @@ fun CipherMusic(
         }
 
     }
-
-
-
-
-
 
 
 

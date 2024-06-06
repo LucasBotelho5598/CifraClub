@@ -45,6 +45,7 @@ import com.example.cifraclub.R
 import com.example.cifraclub.components.LazyChips
 import com.example.cifraclub.components.ListImagemTopCipher
 import com.example.cifraclub.components.ListRowCard
+import com.example.cifraclub.videoplayer.VideoPLayer
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -118,6 +119,7 @@ fun BodyAdd() {
             .verticalScroll(rememberScrollState())
             .padding(5.dp)
     ) {
+        VideoPLayer()
         AppBarCifraClub()
         LazyChips()
         ListRowCard()
