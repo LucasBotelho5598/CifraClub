@@ -41,14 +41,14 @@ fun ListImagemTopCipher() {
         contentPadding = PaddingValues(horizontal = 16.dp),
         modifier = Modifier.height(280.dp)
     ) {
-        items(imageList) { item ->
+        items(imageList, key = { it.id }) { item ->
             ImagemList(listImage = item)
         }
     }
 
 }
 
-private val listNumber = listOf("1", "2")
+
 
 @Composable
 fun ImagemList(
@@ -69,11 +69,12 @@ fun ImagemList(
                 .size(40.dp)
 
         )
-        Text(
-            text = listNumber[0],
-            color = Color.Black,
-            modifier = Modifier.padding(horizontal = 16.dp)
-        )
+            Text(
+                text = "",
+                color = Color.Black,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+
         Column {
             Text("Consagração", color = Color.Black)
             Text("Aline Barros", color = Color.Black)

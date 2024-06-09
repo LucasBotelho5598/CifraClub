@@ -119,7 +119,6 @@ fun BodyAdd() {
             .verticalScroll(rememberScrollState())
             .padding(5.dp)
     ) {
-        VideoPLayer()
         AppBarCifraClub()
         LazyChips()
         ListRowCard()
